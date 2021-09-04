@@ -1,3 +1,11 @@
+# Slambook2 code with better modern CMake and latest dependencies
+
+在官方 Slambook2 代码基础上修改：
+- CMake： 使用 modern CMake 的风格处理依赖关系; CMake 3.20 + Ubuntu 20.04 + Clang 13 环境
+- 依赖库：用最新版， Pangolin 需要开 C++17， OpenCV 使用 4 （包含代码中的修改）
+- 涉及到的手动编译的库， 下载和编译步骤、 编译后用的 deps.cmake 见 [dependencies](dependencies) 目录
+- 删掉了一些没用的 cmake_modules ， 改用各依赖库官方的 xxx-config.cmake 提供的变量
+
 ## Slambook2
 ![titlepage](./figures/title.png)
 

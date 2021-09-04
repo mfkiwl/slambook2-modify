@@ -9,7 +9,7 @@ DEFINE_string(config_file, "./config/default.yaml", "config file path");
 
 int main(int argc, char **argv) {
     google::ParseCommandLineFlags(&argc, &argv, true);
-
+    // 这里应该增加检查逻辑， 判断数据Kitti数据目录是否存在， 不然直接 segfault 了不给提示太坏了。
     myslam::VisualOdometry::Ptr vo(
         new myslam::VisualOdometry(FLAGS_config_file));
     assert(vo->Init() == true);

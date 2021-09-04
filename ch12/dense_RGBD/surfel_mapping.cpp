@@ -68,8 +68,8 @@ int main(int argc, char **argv) {
 
     // Load the points
     PointCloudPtr cloud(new PointCloud);
-    if (argc == 0 || pcl::io::loadPCDFile(argv[1], *cloud)) {
-        cout << "failed to load point cloud!";
+    if (argc == 1 || pcl::io::loadPCDFile(argv[1], *cloud)) {
+        cout << "failed to load point cloud! argv[1] should usually be map.pcd" << std::endl;
         return 1;
     }
     cout << "point cloud loaded, points: " << cloud->points.size() << endl;

@@ -12,6 +12,11 @@ using namespace std;
 
 int main( int argc, char** argv )
 {
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: %s dataset_dir\n", argv[0]);
+        return -1;
+    }
     string dataset_dir = argv[1];
     ifstream fin ( dataset_dir+"/associate.txt" );
     if ( !fin )
